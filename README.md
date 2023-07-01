@@ -23,8 +23,7 @@ python script_name.py
 Script Explanation
 Import necessary libraries:
 
-javascript
-Copy code
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -33,37 +32,34 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 Define the list of video links and an empty list to store problematic links:
 
-css
-Copy code
+
+
 video_links = [    "https://www.youtube.com/watch?v=F7uKib-2f9I",    "https://www.youtube.com/watch?v=ZIuxbHOeeA0",    "https://www.youtube.com/watch?v=sJmWIC6U4sc",    "https://www.youtube.com/watch?v=wKMsSTNxfHg",]
 
 problematic_links = []
 Initialize the Selenium WebDriver (Chrome in this case):
 
-makefile
-Copy code
+
 driver = webdriver.Chrome()
 Open the website for video download:
 
-csharp
-Copy code
+
 driver.get("https://ssyoutube.com/en667NW/")
 Wait for the page to load:
 
-css
-Copy code
+
+
 time.sleep(3)
 Find the input box and download button using the WebDriverWait object:
 
-scss
-Copy code
+
 wait = WebDriverWait(driver, 10)
 input_box = wait.until(EC.presence_of_element_located((By.ID, "id_url")))
 download_button = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "fas.fa-arrow-right")))
 Loop through the video links and attempt to download each video:
 
-python
-Copy code
+
+
 for link in video_links:
     try:
         # Enter the link in the input box
@@ -91,16 +87,14 @@ for link in video_links:
         continue
 Print the completion message and display any problematic links:
 
-bash
-Copy code
+
 print("Downloading process completed.")
 print("Problematic links:")
 for link in problematic_links:
     print(link)
 Pause the script and keep the browser window open until the Enter key is pressed:
 
-css
-Copy code
+
 input("Press Enter to exit...")
 Note
 This script uses the ssyoutube.com website for video download. Please make sure to comply with the terms and conditions of the website and respect the rights of content creators.
